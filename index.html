@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fanie's Portfolio</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
@@ -61,7 +62,7 @@
                         <p>I’m a 27-year-old developer from Mpumalanga, South Africa, who started coding in 2018 with C++. After struggling with it, I found my passion in 2020 while working with C and later Java, building projects like a basic calculator and a sweep south website with database integration. 
                             In 2021, I joined CodeX to learn JavaScript, which I still use today. I believe in the power of unity, collaboration, and continuous learning. 
                             I'm hardworking, ambitious, goal-driven, and thrive under pressure, always eager to take on new challenges.</p>
-                        <a href="cv/sample.pdf" download="cv/sample.pdf">Download CV</a>
+                        <a href="cvtemplate/2025 Candidate CV.pdf" download="cvtemplate/2025 Candidate CV.pdf">Download CV</a>
                     </div>
                 </div>
             </div>
@@ -78,8 +79,10 @@
             <div class="box">
                 <span id="first"> </span>
                 <div class="content">
-                    <h2>Front-End</h2>
-                    <p>I am a front-end developer specializing in JavaScript, creating dynamic, interactive web experiences with modern frameworks and innovative ideas </p>
+                    <h2>Networking Technician</h2>
+                    <p>
+                        I am also a networking technician with hands-on experience from the Cisco Networking Technician Career Path, bringing fresh ideas and innovative solutions for network optimization and security.
+                    </p> 
                 </div>
             </div>
             <div class="box">
@@ -92,20 +95,6 @@
             <div class="box">
                 <span id="third"></span>
                 <div class="content">
-                    <h2>Full-Stack</h2>
-                    <p>I am a full-stack web developer skilled in both front-end and back-end technologies, building dynamic applications with user-friendly interfaces and efficient server-side functionality.</p>
-                </div>
-            </div>
-            <div class="box">
-                <span id="fourth"></span>
-                <div class="content">
-                    <h2>Data Analyst</h2>
-                    <p>I am a fresher data analyst completing a learnership at <strong>CAPACITI</strong>, uncovering insights, creating visualizations, and supporting decision-making with innovative data interpretation.</p>
-                </div>
-            </div>
-            <div class="box">
-                <span id="fifth"></span>
-                <div class="content">
                     <h2>Cybersecurity Analyst</h2>
                     <p>
                         I am a junior cybersecurity analyst with knowledge from the Cisco Cybersecurity Career Path, bringing innovative approaches to strengthening cybersecurity in the digital age.
@@ -113,11 +102,24 @@
                 </div>
             </div>
             <div class="box">
+                <span id="fourth"></span>
+                <div class="content">
+                    <h2>Front-End</h2>
+                    <p>I am a front-end developer specializing in JavaScript, creating dynamic, interactive web experiences with modern frameworks and innovative ideas </p>
+                </div>
+            </div>
+            <div class="box">
+                <span id="fifth"></span>
+                <div class="content">
+                    <h2>Data Analyst</h2>
+                    <p>I am a fresher data analyst completing a learnership at <strong>CAPACITI</strong>, uncovering insights, creating visualizations, and supporting decision-making with innovative data interpretation.</p>
+                </div>
+            </div>
+            <div class="box">
                 <span id="sixth"></span>
                 <div class="content">
-                    <h2>Networking Technician</h2>
-                    <p>
-                        I am also a networking technician with hands-on experience from the Cisco Networking Technician Career Path, bringing fresh ideas and innovative solutions for network optimization and security.</p>
+                    <h2>Full-Stack</h2>
+                    <p>I am a full-stack web developer skilled in both front-end and back-end technologies, building dynamic applications with user-friendly interfaces and efficient server-side functionality.</p>
                 </div>
             </div>
         </div>
@@ -279,24 +281,29 @@
                     </div>
                     <div class="column right">
                         <div class="text">Message me</div>
-                        <form action="#">
+                        <form id="contact-form" action="contact.php" method="POST">
                             <div class="fields">
                                 <div class="field name">
-                                    <input type="text" placeholder="Name" required>
+                                    <input type="text" id="name" name="name" placeholder="Your Name">
+                                    <span class="error" id="name-error"></span>
                                 </div>
                                 <div class="field email">
-                                    <input type="email" placeholder="Email" required>
+                                    <input type="email" id="email" name="email" placeholder="Your Email">
+                                    <span class="error" id="email-error"></span>
                                 </div>
                             </div>
-                            <div class="field">
-                                <input type="text" placeholder="Subject" required>
+                            <div class="field subject">
+                                <input type="text" id="subject" name="subject" placeholder="Subject">
+                                <span class="error" id="subject-error"></span>
                             </div>
                             <div class="field textarea">
-                                <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                                <textarea id="message" name="message" placeholder="Your Message"></textarea>
+                                <span class="error" id="message-error"></span>
                             </div>
                             <div class="button-area">
-                                <button type="submit">Send message</button>
+                                <button type="submit">Send Message</button>
                             </div>
+                            <p id="success-message" style="color: green;"></p>
                         </form>
                     </div>
                 </div>
@@ -362,5 +369,6 @@
             loader.style.display = "none";
         })
     </script>
+    <script src="formvalidation.js"></script>
 </body>
 </html>
