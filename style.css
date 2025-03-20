@@ -651,8 +651,12 @@ section .title::after{
 .skills .title::after{
     content: "what i know";
 }
-.skills .skills-content .column{
-    width: calc(50% - 40px);
+.skills-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
 }
 .skills .skills-content .left .text{
     font-size: 20px;
